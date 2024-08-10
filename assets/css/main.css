@@ -1947,3 +1947,11 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.about-images img {
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
