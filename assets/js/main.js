@@ -177,3 +177,18 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll('.about-images img');
+
+  images.forEach(img => {
+    img.addEventListener('mouseover', function() {
+      this.style.transform = 'scale(1.05)';
+      this.style.transition = 'transform 0.3s ease';
+    });
+
+    img.addEventListener('mouseout', function() {
+      this.style.transform = 'scale(1)';
+    });
+  });
+});
