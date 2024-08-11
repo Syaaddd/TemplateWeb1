@@ -221,3 +221,14 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('load', aosInit);
 
 })();
+
+function loadVisitorCount() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "counter.php", true);
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("visitorCount").innerHTML = xhr.responseText;
+      }
+  };
+  xhr.send();
+}
