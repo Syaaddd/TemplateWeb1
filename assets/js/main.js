@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 })();
 
-function loadVisitorCount() {
+/*function loadVisitorCount() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "counter.php", true);
   xhr.onreadystatechange = function() {
@@ -231,4 +231,18 @@ function loadVisitorCount() {
       }
   };
   xhr.send();
+}*/
+
+function updateVisitorCount() {
+  // Ambil jumlah pengunjung dari localStorage
+  let count = localStorage.getItem('visitorCount') || 0;
+
+  // Tambahkan 1 untuk setiap kunjungan
+  count++;
+
+  // Simpan kembali ke localStorage
+  localStorage.setItem('visitorCount', count);
+
+  // Tampilkan jumlah pengunjung
+  document.getElementById("visitorCount").innerText = count;
 }
